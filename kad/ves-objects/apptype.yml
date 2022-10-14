@@ -1,0 +1,16 @@
+metadata:
+  name: jdo-kad
+  namespace: shared
+  labels: {}
+  annotations: {}
+  description: null
+  disable: null
+spec:
+  features:
+    - type: BUSINESS_LOGIC_MARKUP
+    - type: TIMESERIES_ANOMALY_DETECTION
+    - type: PER_REQ_ANOMALY_DETECTION
+    - type: USER_BEHAVIOR_ANALYSIS
+  business_logic_markup_setting:
+    disable: {}
+

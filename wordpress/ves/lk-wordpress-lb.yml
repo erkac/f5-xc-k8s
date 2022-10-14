@@ -1,0 +1,64 @@
+metadata:
+  name: wordpress-lb
+  labels: {}
+  namespace: lk-wordpress
+spec:
+  domains:
+    - wordpress-demo.xc.f5demo.app
+  https_auto_cert:
+    http_redirect: true
+    add_hsts: false
+    port: 443
+    tls_config:
+      default_security: {}
+    no_mtls: {}
+    default_header: {}
+    enable_path_normalize: {}
+    non_default_loadbalancer: {}
+  advertise_on_public_default_vip: {}
+  default_route_pools:
+    - pool:
+        tenant: f5-cz-guwmuexg
+        namespace: lk-wordpress
+        name: wordpress-pool-k8s
+        kind: origin_pool
+      weight: 1
+      priority: 1
+      endpoint_subsets: {}
+  routes: []
+  disable_waf: {}
+  add_location: true
+  no_challenge: {}
+  more_option:
+    request_headers_to_add:
+      - name: "Host:"
+        value: wordpress.xc.f5demo.app
+        append: false
+    request_headers_to_remove: []
+    response_headers_to_add: []
+    response_headers_to_remove: []
+    max_request_header_size: 60
+    custom_errors: {}
+    idle_timeout: 30000
+    disable_default_error_pages: false
+  user_id_client_ip: {}
+  disable_rate_limit: {}
+  waf_exclusion_rules: []
+  data_guard_rules: []
+  blocked_clients: []
+  trusted_clients: []
+  ddos_mitigation_rules: []
+  service_policies_from_namespace: {}
+  round_robin: {}
+  multi_lb_app: {}
+  disable_bot_defense: {}
+  disable_api_definition: {}
+  disable_ip_reputation: {}
+  dns_info: []
+  state: VIRTUAL_HOST_READY
+  auto_cert_info:
+    auto_cert_state: CertificateValid
+    auto_cert_expiry: 2022-12-21T08:29:06Z
+    auto_cert_subject: CN=wordpress-demo.xc.f5demo.app
+    auto_cert_issuer: CN=R3,O=Let's Encrypt,C=US
+    dns_records: []

@@ -1,0 +1,14 @@
+metadata:
+  name: lkl-argocd-server
+  namespace: system
+  labels: {}
+  annotations: {}
+spec:
+  k8s_cluster_role:
+    tenant: f5-cz-guwmuexg
+    namespace: system
+    name: argocd-server
+  subjects:
+    - service_account:
+        namespace: lkl-argo
+        name: argocd-server

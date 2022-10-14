@@ -1,0 +1,13 @@
+image: gcr.io/devtest-293809/kad
+cluster: unknown
+replicas: 2
+storageClassName: training
+
+rbac:
+  enabled: false
+
+prometheus:
+  enabled: true
+
+persistent:
+  enabled: false

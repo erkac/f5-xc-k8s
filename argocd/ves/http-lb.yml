@@ -1,0 +1,53 @@
+metadata:
+  name: lk-argocd
+  namespace: lk-argocd
+  labels: {}
+  annotations: {}
+spec:
+  domains:
+    - argocd.xc.f5demo.app
+  https_auto_cert:
+    http_redirect: true
+    port: 443
+    tls_config:
+      default_security: {}
+    no_mtls: {}
+    default_header: {}
+    enable_path_normalize: {}
+  downstream_tls_certificate_expiration_timestamps:
+    - {}
+  advertise_on_public_default_vip: {}
+  default_route_pools:
+    - pool:
+        tenant: f5-cz-guwmuexg
+        namespace: lk-argocd
+        name: k8s-argocd
+      weight: 1
+      priority: 1
+      endpoint_subsets: {}
+  routes: []
+  disable_waf: {}
+  add_location: true
+  no_challenge: {}
+  user_id_client_ip: {}
+  disable_rate_limit: {}
+  waf_exclusion_rules: []
+  data_guard_rules: []
+  blocked_clients: []
+  trusted_clients: []
+  ddos_mitigation_rules: []
+  service_policies_from_namespace: {}
+  round_robin: {}
+  multi_lb_app: {}
+  disable_bot_defense: {}
+  disable_api_definition: {}
+  disable_ip_reputation: {}
+  dns_info: []
+  state: VIRTUAL_HOST_READY
+  auto_cert_state: CertificateValid
+  auto_cert_info:
+    auto_cert_state: CertificateValid
+    auto_cert_expiry: 2022-09-18T11:14:41Z
+    auto_cert_subject: CN=argocd.xc.f5demo.app
+    auto_cert_issuer: CN=R3,O=Let's Encrypt,C=US
+    dns_records: []

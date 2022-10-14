@@ -1,0 +1,43 @@
+metadata:
+  name: kad
+  namespace: null
+  labels: {}
+  annotations: {}
+  description: null
+  disable: null
+spec:
+  domains:
+    - kad.ctc-training-vs01.infra.poc
+  http:
+    ? dns_volterra_managed
+  advertise_custom:
+    advertise_where:
+      - site:
+          network: SITE_NETWORK_INSIDE_AND_OUTSIDE
+          site:
+            tenant: ctc-training-1-wffkvuqo
+            namespace: system
+            name: ctc-training-vs01
+          ip: null
+        use_default_port: {}
+  default_route_pools:
+    - pool:
+        tenant: ctc-training-1-wffkvuqo
+        namespace: vs01
+        name: kad
+      weight: 1
+      endpoint_subsets: {}
+  routes: null
+  cors_policy: null
+  disable_waf: {}
+  add_location: null
+  no_challenge: {}
+  more_option: null
+  user_identification: null
+  disable_rate_limit: {}
+  malicious_user_mitigation: null
+  waf_exclusion_rules: null
+  blocked_clients: null
+  trusted_clients: null
+  service_policies_from_namespace: {}
+  round_robin: {}

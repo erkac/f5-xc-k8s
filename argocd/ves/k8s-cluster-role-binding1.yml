@@ -1,0 +1,14 @@
+metadata:
+  name: lkl-argocd-application-controller
+  namespace: system
+  labels: {}
+  annotations: {}
+spec:
+  k8s_cluster_role:
+    tenant: f5-cz-guwmuexg
+    namespace: system
+    name: argocd-application-controller
+  subjects:
+    - service_account:
+        namespace: lkl-argo
+        name: argocd-application-controller

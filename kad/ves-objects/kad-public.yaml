@@ -1,0 +1,47 @@
+metadata:
+  name: kad-public
+  namespace: jdo-kad
+  labels: {}
+  annotations: {}
+  description: null
+  disable: null
+spec:
+  domains:
+    - kad.jdlabs.cz
+  https_auto_cert:
+    http_redirect: true
+    add_hsts: null
+    no_mtls: {}
+    tls_config:
+      default_security: {}
+    default_header: {}
+    enable_path_normalize: {}
+  advertise_on_public_default_vip: {}
+  default_route_pools:
+    - pool:
+        tenant: f5-cz-guwmuexg
+        namespace: jdo-kad
+        name: kad
+      weight: 1
+      priority: 1
+      endpoint_subsets: {}
+  routes: null
+  cors_policy: null
+  disable_waf: {}
+  add_location: null
+  no_challenge: {}
+  more_option: null
+  user_id_client_ip: {}
+  disable_rate_limit: {}
+  malicious_user_mitigation: null
+  waf_exclusion_rules: null
+  data_guard_rules: null
+  blocked_clients: null
+  trusted_clients: null
+  ddos_mitigation_rules: null
+  service_policies_from_namespace: {}
+  round_robin: {}
+  multi_lb_app: {}
+  disable_bot_defense: {}
+  api_definitions: null
+

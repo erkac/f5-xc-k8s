@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petstore-deployment1
+  labels:
+    app: petstore
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: petstore
+  template:
+    metadata:
+      labels:
+        app: petstore
+    spec:
+      containers:
+      - name: petstore
+        image: swaggerapi/petstore:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SWAGGER_HOST
+          value: petstore-lk.xc.f5demo.app
+        - name: SWAGGER_URL
+          value: https://petstore-lk.xc.f5demo.app
+
