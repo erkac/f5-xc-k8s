@@ -8,6 +8,7 @@ Some demos I collected over the time...
 [jdo-petstore howto](https://gitlab.com/jdbk/f5xc-petstore)
 
 ## kad
+> Work in progress...
 
 ## Wordpress
 [README.md](./wordpress/README.md)
