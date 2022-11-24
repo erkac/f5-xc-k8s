@@ -1,0 +1,46 @@
+metadata:
+  name: mysql-svc
+  namespace: lk-wordpress
+  labels: {}
+  annotations: {}
+  disable: false
+spec:
+  domains:
+    - mysql
+  listen_port: 3306
+  no_sni: {}
+  dns_volterra_managed: false
+  origin_pools: []
+  origin_pools_weights:
+    - pool:
+        tenant: f5-cz-guwmuexg
+        namespace: lk-wordpress
+        name: lk-swan-mysql
+        kind: origin_pool
+      weight: 1
+      priority: 1
+      endpoint_subsets: {}
+  advertise_custom:
+    advertise_where:
+      - site:
+          network: SITE_NETWORK_SERVICE
+          site:
+            tenant: f5-cz-guwmuexg
+            namespace: system
+            name: lk-udf
+            kind: site
+        port: 3306
+      - site:
+          network: SITE_NETWORK_SERVICE
+          site:
+            tenant: f5-cz-guwmuexg
+            namespace: system
+            name: lk-vmware
+            kind: site
+        port: 3306
+  hash_policy_choice_round_robin: {}
+  idle_timeout: 3600000
+  retract_cluster: {}
+  tcp: {}
+  dns_info: []
+  downstream_tls_certificate_expiration_timestamps: []
