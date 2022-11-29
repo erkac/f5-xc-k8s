@@ -27,3 +27,23 @@ UPDATE wp_options SET option_value='https://wordpress-demo.xc.f5demo.app' WHERE 
 vesctl configuration delete http_loadbalancer lk-wordpress -n lk-wordpress
 vesctl configuration delete origin_pool lk-wordpress-pool -n lk-wordpress
 ```
+
+
+
+## Multisite deployment
+
+### mysql TCP LB
+
+
+
+**TCP Load balancer**
+
+![CleanShot 2022-11-29 at 21.52.20](img/README/CleanShot%202022-11-29%20at%2021.52.20.png)
+
+**Origin Pool**
+
+![CleanShot 2022-11-29 at 21.52.52](img/README/CleanShot%202022-11-29%20at%2021.52.52.png)
+
+**Publishing**
+
+![CleanShot 2022-11-29 at 21.50.46](img/README/CleanShot%202022-11-29%20at%2021.50.46.png)
