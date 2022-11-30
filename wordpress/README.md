@@ -8,7 +8,10 @@ k apply -f ./yml/01-secret.yml -n lk-wordpress
 k apply -f ./yml/02-mysql-statefullset.yml -n lk-wordpress
 ```
 
+- scaling works only via editing `05-wordpress-deployment.yml` -> `replicas: X`
+
 ## Fixing issues
+
 For some reason the FQDN in Wordpress is not set correctly, the updates below will fix it.
 
 ### Mysql
@@ -47,3 +50,7 @@ vesctl configuration delete origin_pool lk-wordpress-pool -n lk-wordpress
 **Publishing**
 
 ![CleanShot 2022-11-29 at 21.50.46](img/README/CleanShot%202022-11-29%20at%2021.50.46.png)
+
+**App Traffic**
+
+![CleanShot 2022-11-30 at 11.32.25](img/README/CleanShot%202022-11-30%20at%2011.32.25.png)
