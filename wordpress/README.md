@@ -21,7 +21,7 @@ kubectl apply -f ./yml/05-wordpress-deployment.yml
 
 ### Fixing issues
 
-For some reason the FQDN in Wordpress is not set correctly, the updates below will fix it.
+For some reason the FQDN in Wordpress is not set correctly, the updates below will fix it. First it's mandatory to run the initial setup. Go to: `https://wordpress-demo.xc.f5demo.app/wp-admin/install.php` to conclude the setup then follow below with the MySQL fix.
 
 **MySQL**
 
@@ -41,8 +41,8 @@ UPDATE wp_options SET option_value='https://wordpress-demo.xc.f5demo.app' WHERE 
 
 1. Download the theme unit [test data](data/theme-unit-test-data.xml)
 2. Go to `Tools` > `Import` > `WordPress` in order to import test data onto your WordPress website.
-3. Choose a xml file for content import on your computer.
-4. `Upload and import`.
+3. On the same page `Run Importer`
+4. Choose a xml file for content import on your computer -> `Upload and import`.
 5. Check the `Download and import file attachments` box and click `Submit`.
 
 

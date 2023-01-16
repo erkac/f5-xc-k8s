@@ -1,7 +1,9 @@
 metadata:
   name: wordpress-lb
-  labels: {}
   namespace: lk-wordpress
+  labels: {}
+  annotations: {}
+  disable: false
 spec:
   domains:
     - wordpress-demo.xc.f5demo.app
@@ -15,6 +17,10 @@ spec:
     default_header: {}
     enable_path_normalize: {}
     non_default_loadbalancer: {}
+    header_transformation_type:
+      default_header_transformation: {}
+  downstream_tls_certificate_expiration_timestamps:
+    - {}
   advertise_on_public_default_vip: {}
   default_route_pools:
     - pool:
@@ -30,10 +36,7 @@ spec:
   add_location: true
   no_challenge: {}
   more_option:
-    request_headers_to_add:
-      - name: "Host:"
-        value: wordpress.xc.f5demo.app
-        append: false
+    request_headers_to_add: []
     request_headers_to_remove: []
     response_headers_to_add: []
     response_headers_to_remove: []
@@ -50,7 +53,10 @@ spec:
   ddos_mitigation_rules: []
   service_policies_from_namespace: {}
   round_robin: {}
-  multi_lb_app: {}
+  disable_trust_client_ip_headers: {}
+  disable_ddos_detection: {}
+  disable_malicious_user_detection: {}
+  disable_api_discovery: {}
   disable_bot_defense: {}
   disable_api_definition: {}
   disable_ip_reputation: {}
@@ -58,7 +64,6 @@ spec:
   state: VIRTUAL_HOST_READY
   auto_cert_info:
     auto_cert_state: CertificateValid
-    auto_cert_expiry: 2022-12-21T08:29:06Z
     auto_cert_subject: CN=wordpress-demo.xc.f5demo.app
     auto_cert_issuer: CN=R3,O=Let's Encrypt,C=US
     dns_records: []

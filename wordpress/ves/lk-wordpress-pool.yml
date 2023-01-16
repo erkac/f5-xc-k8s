@@ -10,7 +10,7 @@ spec:
           site:
             tenant: f5-cz-guwmuexg
             namespace: system
-            name: lk-swan-ba
+            name: xc-reddwarf
             kind: site
         vk8s_networks: {}
       labels: {}
