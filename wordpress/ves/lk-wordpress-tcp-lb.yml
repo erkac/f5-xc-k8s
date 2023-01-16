@@ -1,5 +1,5 @@
 metadata:
-  name: mysql-svc
+  name: tcp-mysql
   namespace: lk-wordpress
   labels: {}
   annotations: {}
@@ -15,7 +15,7 @@ spec:
     - pool:
         tenant: f5-cz-guwmuexg
         namespace: lk-wordpress
-        name: lk-swan-mysql
+        name: mysql-pool
         kind: origin_pool
       weight: 1
       priority: 1
@@ -27,15 +27,7 @@ spec:
           site:
             tenant: f5-cz-guwmuexg
             namespace: system
-            name: lk-udf
-            kind: site
-        port: 3306
-      - site:
-          network: SITE_NETWORK_SERVICE
-          site:
-            tenant: f5-cz-guwmuexg
-            namespace: system
-            name: lk-vmware
+            name: xc-starbug
             kind: site
         port: 3306
   hash_policy_choice_round_robin: {}
