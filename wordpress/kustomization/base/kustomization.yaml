@@ -1,0 +1,7 @@
+resources:
+- 01-secret.yml
+- 02-mysql-statefullset.yml
+- 03-mysql-service.yml
+- 04-wordpress-pvc.yml
+- 05-wordpress-deployment.yml
+- 06-wordpress-service.yml
